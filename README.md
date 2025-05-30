@@ -40,7 +40,7 @@ go build -o go_shell
 3. Run it:
 
 ```bash
-./goshell
+./go_shell
 ```
 
 To test if it's really working, try typing `ls` or `echo Hello!`
