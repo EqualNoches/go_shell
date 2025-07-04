@@ -24,14 +24,14 @@ func main() {
 		//get the host name
 		host, err := os.Hostname()
 		if err != nil {
-			fmt.Println(os.Stderr, err)
+			fmt.Fprintln(os.Stderr, err)
 			return
 		}
 
 		// get the current user of the machine
 		user_name, err := user.Current()
 		if err != nil {
-			fmt.Println(os.Stderr, err)
+			fmt.Fprintln(os.Stderr, err)
 			return
 		}
 
@@ -39,16 +39,17 @@ func main() {
 		//Read Keyboard input
 		input, err := reader.ReadString('\n')
 		if err != nil {
-			fmt.Println(os.Stderr, err)
+			fmt.Fprintln(os.Stderr, err)
 
 		}
 
 		// call execInput function
 		if execInput(input); err != nil {
-			fmt.Println(os.Stderr, err)
+			fmt.Fprintln(os.Stderr, err)
 		}
 	}
 }
+
 func execInput(input string) error {
 	input = strings.TrimSuffix(input, "\n")
 
@@ -57,13 +58,14 @@ func execInput(input string) error {
 
 	switch args[0] {
 	case "cd":
-		// "cd" to main directory not supported
-
-		if len(args) < 2 {
-			return errors.New("Please specify the path")
+		path := ""
+		if len(args) < 2 || args[1] == "~" || args[1] == "" {
+			usr, _ := user.Current()
+			path = usr.HomeDir
+		} else {
+			path = args[1]
 		}
-
-		return os.Chdir(args[1])
+		return os.Chdir(path)
 	case "exit":
 		os.Exit(0)
 	}
