@@ -78,12 +78,6 @@ This is super basic right now. Here are some things I might (or you might!) add 
 
 ---
 
-## 📝 License
-
-MIT. Do whatever you want with it. If you improve it, I'd love to see what you build.
-
----
-
 ## 🙌 Thanks
 
 If you made it this far — thanks for checking this out. If you have feedback or questions, feel free to open an issue or just fork and tinker.
