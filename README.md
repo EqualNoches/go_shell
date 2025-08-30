@@ -59,13 +59,6 @@ Anything else (like `ls`, `pwd`, `mkdir`, etc.) gets passed to your system's she
 
 ---
 
-## 💡 Why I Built This
-
-Mostly as a learning exercise. I wanted to get more comfortable with Go’s `os/exec`, work with input/output streams, and understand how shells handle command parsing.
-
-That said, it turned out kind of cool. Maybe you’ll find it useful or want to build on top of it.
-
----
 
 ## 📌 Future Ideas
 
